@@ -19,6 +19,10 @@ const ProductContextProvider = (props) => {
     }
 
     const handleCategory = (category) => {
+        if ( category === "categories") {
+            setProducts(data);
+            return;
+        }
         const newProducts = data.filter((product) => 
         product.category === category);
         setProducts(newProducts);
